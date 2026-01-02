@@ -1,5 +1,6 @@
+import { ThemeSelector } from "@/components/ThemeSelector";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { tmdbFetch } from "@/lib/tmdb";
-// import Link from "next/link";
 
 export default async function Home() {
   let genresList = [];
@@ -10,5 +11,10 @@ export default async function Home() {
     console.error("failed to load genres", err);
   }
 
-  return <div className="bg-green-400">start</div>;
+  return (
+    <div>
+      <ThemeSelector />
+      <ThemeToggle />
+    </div>
+  );
 }

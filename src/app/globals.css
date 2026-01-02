@@ -1,1 +1,262 @@
 @import "tailwindcss";
+
+:root {
+    /* Cinema Classic - Light Mode */
+    --color-background-light: 255 255 255;
+    --color-surface-light: 246 248 250;
+    --color-accent-light: 201 3 14;
+    --color-accent-hover-light: 170 2 11;
+    --color-text-primary-light: 36 41 47;
+    --color-text-secondary-light: 87 96 106;
+    --color-success-light: 26 127 55;
+    --color-warning-light: 191 135 0;
+
+    /* Cinema Classic - Dark Mode */
+    --color-background-dark: 13 17 23;
+    --color-surface-dark: 22 27 34;
+    --color-accent-dark: 229 9 20;
+    --color-accent-hover-dark: 200 8 17;
+    --color-text-primary-dark: 240 246 252;
+    --color-text-secondary-dark: 139 148 158;
+    --color-success-dark: 63 185 80;
+    --color-warning-dark: 210 153 34;
+
+    /* Modern Purple - Light Mode */
+    --color-background-purple-light: 250 245 255;
+    --color-surface-purple-light: 243 232 255;
+    --color-accent-purple-light: 147 51 234;
+    --color-accent-hover-purple-light: 126 34 206;
+    --color-text-primary-purple-light: 30 27 75;
+    --color-text-secondary-purple-light: 107 33 168;
+    --color-success-purple-light: 34 197 94;
+    --color-warning-purple-light: 217 119 6;
+
+    /* Modern Purple - Dark Mode */
+    --color-background-purple-dark: 15 10 30;
+    --color-surface-purple-dark: 26 19 50;
+    --color-accent-purple-dark: 168 85 247;
+    --color-accent-hover-purple-dark: 147 51 234;
+    --color-text-primary-purple-dark: 245 243 255;
+    --color-text-secondary-purple-dark: 196 181 253;
+    --color-success-purple-dark: 74 222 128;
+    --color-warning-purple-dark: 251 191 36;
+
+    /* Ocean Blue - Light Mode */
+    --color-background-ocean-light: 248 250 252;
+    --color-surface-ocean-light: 241 245 249;
+    --color-accent-ocean-light: 2 132 199;
+    --color-accent-hover-ocean-light: 3 105 161;
+    --color-text-primary-ocean-light: 15 23 42;
+    --color-text-secondary-ocean-light: 71 85 105;
+    --color-success-ocean-light: 34 197 94;
+    --color-warning-ocean-light: 234 88 12;
+
+    /* Ocean Blue - Dark Mode */
+    --color-background-ocean-dark: 2 6 23;
+    --color-surface-ocean-dark: 15 23 42;
+    --color-accent-ocean-dark: 14 165 233;
+    --color-accent-hover-ocean-dark: 2 132 199;
+    --color-text-primary-ocean-dark: 248 250 252;
+    --color-text-secondary-ocean-dark: 148 163 184;
+    --color-success-ocean-dark: 74 222 128;
+    --color-warning-ocean-dark: 251 146 60;
+
+    /* Custom color definitions */
+    --color-background: var(--color-background-light);
+    --color-surface: var(--color-surface-light);
+    --color-accent: var(--color-accent-light);
+    --color-accent-hover: var(--color-accent-hover-light);
+    --color-text-primary: var(--color-text-primary-light);
+    --color-text-secondary: var(--color-text-secondary-light);
+    --color-success: var(--color-success-light);
+    --color-warning: var(--color-warning-light);
+}
+
+/* Dark mode overrides */
+.dark {
+    --color-background: var(--color-background-dark);
+    --color-surface: var(--color-surface-dark);
+    --color-accent: var(--color-accent-dark);
+    --color-accent-hover: var(--color-accent-hover-dark);
+    --color-text-primary: var(--color-text-primary-dark);
+    --color-text-secondary: var(--color-text-secondary-dark);
+    --color-success: var(--color-success-dark);
+    --color-warning: var(--color-warning-dark);
+}
+
+/* Purple theme */
+.theme-purple {
+    --color-background: var(--color-background-purple-light);
+    --color-surface: var(--color-surface-purple-light);
+    --color-accent: var(--color-accent-purple-light);
+    --color-accent-hover: var(--color-accent-hover-purple-light);
+    --color-text-primary: var(--color-text-primary-purple-light);
+    --color-text-secondary: var(--color-text-secondary-purple-light);
+    --color-success: var(--color-success-purple-light);
+    --color-warning: var(--color-warning-purple-light);
+}
+
+.theme-purple.dark {
+    --color-background: var(--color-background-purple-dark);
+    --color-surface: var(--color-surface-purple-dark);
+    --color-accent: var(--color-accent-purple-dark);
+    --color-accent-hover: var(--color-accent-hover-purple-dark);
+    --color-text-primary: var(--color-text-primary-purple-dark);
+    --color-text-secondary: var(--color-text-secondary-purple-dark);
+    --color-success: var(--color-success-purple-dark);
+    --color-warning: var(--color-warning-purple-dark);
+}
+
+/* Ocean theme */
+.theme-ocean {
+    --color-background: var(--color-background-ocean-light);
+    --color-surface: var(--color-surface-ocean-light);
+    --color-accent: var(--color-accent-ocean-light);
+    --color-accent-hover: var(--color-accent-hover-ocean-light);
+    --color-text-primary: var(--color-text-primary-ocean-light);
+    --color-text-secondary: var(--color-text-secondary-ocean-light);
+    --color-success: var(--color-success-ocean-light);
+    --color-warning: var(--color-warning-ocean-light);
+}
+
+.theme-ocean.dark {
+    --color-background: var(--color-background-ocean-dark);
+    --color-surface: var(--color-surface-ocean-dark);
+    --color-accent: var(--color-accent-ocean-dark);
+    --color-accent-hover: var(--color-accent-hover-ocean-dark);
+    --color-text-primary: var(--color-text-primary-ocean-dark);
+    --color-text-secondary: var(--color-text-secondary-ocean-dark);
+    --color-success: var(--color-success-ocean-dark);
+    --color-warning: var(--color-warning-ocean-dark);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text-primary));
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom utility classes */
+.bg-background {
+    background-color: rgb(var(--color-background));
+}
+
+.bg-surface {
+    background-color: rgb(var(--color-surface));
+}
+
+.bg-accent {
+    background-color: rgb(var(--color-accent));
+}
+
+.bg-accent-hover {
+    background-color: rgb(var(--color-accent-hover));
+}
+
+.text-accent {
+    color: rgb(var(--color-accent));
+}
+
+.hover\:text-accent:hover {
+    color: rgb(var(--color-accent));
+}
+
+.text-text-primary {
+    color: rgb(var(--color-text-primary));
+}
+
+.text-text-secondary {
+    color: rgb(var(--color-text-secondary));
+}
+
+.text-success {
+    color: rgb(var(--color-success));
+}
+
+.text-warning {
+    color: rgb(var(--color-warning));
+}
+
+.stroke-accent {
+    stroke: rgb(var(--color-accent));
+}
+
+.fill-accent {
+    fill: rgb(var(--color-accent));
+}
+
+.text-on-accent {
+    color: white;
+}
+
+.hover\:text-on-accent:hover {
+    color: white;
+}
+
+.hover\:bg-accent:hover {
+    background-color: rgb(var(--color-accent));
+}
+
+.hover\:bg-accent-hover:hover {
+    background-color: rgb(var(--color-accent-hover));
+}
+
+.hover\:bg-accent\/10:hover {
+    background-color: rgb(var(--color-accent) / 0.1);
+}
+
+/* Border colors */
+.border-surface {
+    border-color: rgb(var(--color-surface));
+}
+
+.border-accent {
+    border-color: rgb(var(--color-accent));
+}
+
+/* hide scrollbar */
+.hide_vertical_scrollbar {
+    overflow-y: hidden;
+}
+
+.hide_vertical_scrollbar::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+/* Custom scrollbar just for dropdowns */
+.dropdown-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-track {
+    background: rgb(var(--color-surface));
+    border-radius: 8px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-accent));
+    border-radius: 8px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-accent-hover));
+}
+
+/* Firefox support */
+.dropdown-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-accent)) rgb(var(--color-surface));
+}
+
+/* auto fill bg remover */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: rgb(var(--color-text-primary)) !important;
+    transition: background-color 9999s ease-in-out 0s;
+    color: rgb(var(--color-text-primary)) !important;
+}
