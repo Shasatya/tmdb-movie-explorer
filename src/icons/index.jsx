@@ -64,6 +64,115 @@ export const ArrowLeft = ({ color, className }) => {
   );
 };
 
+export const Genre = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 64 64"
+    strokeWidth="3"
+    stroke="currentColor"
+    fill="none"
+  >
+    <rect x="8.5" y="12.5" width="47" height="39" rx="2" />
+    <line x1="8.5" y1="20.88" x2="55.5" y2="20.88" />
+    <path d="M28.06,30.42V41.7a.5.5,0,0,0,.8.4l9.29-5.7a.49.49,0,0,0-.07-.85L28.79,30A.51.51,0,0,0,28.06,30.42Z" />
+    <line x1="10.5" y1="12.5" x2="17.33" y2="20.88" />
+    <line x1="17.41" y1="12.5" x2="24.24" y2="20.88" />
+    <line x1="24.38" y1="12.5" x2="31.21" y2="20.88" />
+    <line x1="31.77" y1="12.5" x2="38.6" y2="20.88" />
+    <line x1="39.15" y1="12.5" x2="45.98" y2="20.88" />
+    <line x1="46.67" y1="12.5" x2="53.5" y2="20.88" />
+  </svg>
+);
+
+export const SortBy = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    viewBox="0 0 24 24"
+    className={className}
+  >
+    <path
+      d="M8.5 18.5V6M16.5 19V6.5M12 15L8.5 18.5L5 15M13 10L16.5 6.5L20 10"
+      stroke="currentColor"
+      strokeWidth="1.2"
+    />
+  </svg>
+);
+
+export const Year = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12 6V12"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16.24 16.24L12 12"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Refresh = ({ className = "" }) => {
+  return (
+    <>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+      >
+        <rect width="24" height="24" fill="none" />
+        <path
+          d="M2.5 12C2.5 12.2761 2.72386 12.5 3 12.5C3.27614 12.5 3.5 12.2761 3.5 12H2.5ZM3.5 12C3.5 7.30558 7.30558 3.5 12 3.5V2.5C6.75329 2.5 2.5 6.75329 2.5 12H3.5ZM12 3.5C15.3367 3.5 18.2252 5.4225 19.6167 8.22252L20.5122 7.77748C18.9583 4.65062 15.7308 2.5 12 2.5V3.5Z"
+          fill="currentColor"
+        />
+        <path
+          d="M20.4716 2.42157V8.07843H14.8147"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M21.5 12C21.5 11.7239 21.2761 11.5 21 11.5C20.7239 11.5 20.5 11.7239 20.5 12L21.5 12ZM20.5 12C20.5 16.6944 16.6944 20.5 12 20.5L12 21.5C17.2467 21.5 21.5 17.2467 21.5 12L20.5 12ZM12 20.5C8.66333 20.5 5.77477 18.5775 4.38328 15.7775L3.48776 16.2225C5.04168 19.3494 8.26923 21.5 12 21.5L12 20.5Z"
+          fill="currentColor"
+        />
+        <path
+          d="M3.52844 21.5784L3.52844 15.9216L9.18529 15.9216"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </>
+  );
+};
+
 // export const icon = () => {
 //   return <></>;
 // };
