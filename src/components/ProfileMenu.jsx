@@ -4,11 +4,11 @@ import { useState } from "react";
 import ModalWrapper from "./ModalWrapper";
 import AuthModal from "./AuthModal";
 import { useAppRouter } from "@/hooks/useAppRouter";
+import { useAppSelector } from "@/store/hooks";
 
 export default function ProfileMenu() {
   const { goTo } = useAppRouter();
-  const user = null;
-
+  const { user } = useAppSelector((state) => state.auth);
   const [open, setOpen] = useState(false);
   const userName = user?.name?.slice(0, 1).toUpperCase();
 

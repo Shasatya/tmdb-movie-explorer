@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { makeStore } from "./store";
 import { initializeTheme } from "./slices/themeSlice";
+import AuthLoader from "./AuthLoader";
 
 export default function StoreProvider({ children }) {
   // Lazily create the store once on mount
@@ -22,5 +23,10 @@ export default function StoreProvider({ children }) {
     store.dispatch(initializeTheme({ theme, themeVariant }));
   }, [store]);
 
-  return <Provider store={store}>{children}</Provider>;
+  return (
+    <Provider store={store}>
+      <AuthLoader />
+      {children}
+    </Provider>
+  );
 }

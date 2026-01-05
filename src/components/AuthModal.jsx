@@ -2,8 +2,12 @@
 
 import { Cross } from "@/icons/index";
 import { useState } from "react";
+import { useAppDispatch } from "@/store/hooks";
+import { fetchMe } from "@/store/slices/authSlice";
 
 export default function AuthModal({ onClose }) {
+  const dispatch = useAppDispatch();
+
   const [type, setType] = useState("login");
   const [form, setForm] = useState({
     name: "",
@@ -18,7 +22,39 @@ export default function AuthModal({ onClose }) {
   };
 
   const handleSubmit = async (e) => {
-    console.log("form data ", form);
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const endpoint =
+        type === "login" ? "/api/auth/login" : "/api/auth/register";
+
+      const payload =
+        type === "login"
+          ? { email: form.email, password: form.password }
+          : form;
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Something went wrong");
+      }
+
+      dispatch(fetchMe());
+
+      onClose();
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
