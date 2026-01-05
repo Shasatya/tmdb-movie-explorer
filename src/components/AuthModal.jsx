@@ -18,7 +18,7 @@ export default function AuthModal({ onClose }) {
   };
 
   const handleSubmit = async (e) => {
-    console.log("form ", form);
+    console.log("form data ", form);
   };
 
   return (
