@@ -1,3 +1,4 @@
+import ProfileMenu from "./ProfileMenu";
 import { ThemeSelector } from "./ThemeSelector";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -11,8 +12,9 @@ export default function Navbar() {
           </li>
 
           <li className="flex items-center">
-            <ThemeSelector />
-            <ThemeToggle />
+            {/* <ThemeSelector />
+            <ThemeToggle /> */}
+            <ProfileMenu />
           </li>
         </ul>
       </nav>
