@@ -180,7 +180,14 @@ export default function ProfilePage() {
           </div>
 
           <aside className="flex gap-4 justify-end">
-            {isAdmin && <></>}
+            {isAdmin && (
+              <button
+                onClick={() => goTo("/users")}
+                className="cursor-pointer rounded-md border-accent border px-3 py-1 text-accent hover:bg-accent hover:text-on-accent transition-all duration-200 hover:shadow-lg"
+              >
+                All Users
+              </button>
+            )}
             <button
               onClick={() => dispatch(logout())}
               className="cursor-pointer rounded-md border font-normal px-3 py-1 border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-all duration-200 hover:shadow-lg"
