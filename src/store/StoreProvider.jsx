@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { makeStore } from "./store";
 import { initializeTheme } from "./slices/themeSlice";
 import AuthLoader from "./AuthLoader";
+import { fetchGenres } from "./slices/genreSlice";
 
 export default function StoreProvider({ children }) {
   // Lazily create the store once on mount
@@ -21,6 +22,10 @@ export default function StoreProvider({ children }) {
     const themeVariant = savedVariant || "cinema";
 
     store.dispatch(initializeTheme({ theme, themeVariant }));
+  }, [store]);
+
+  useEffect(() => {
+    store.dispatch(fetchGenres());
   }, [store]);
 
   return (

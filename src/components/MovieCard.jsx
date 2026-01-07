@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { useAppRouter } from "@/hooks/useAppRouter";
+import { useAppSelector } from "@/store/hooks";
 
 export default function MovieCard({ movie }) {
   const { goTo } = useAppRouter();
+
+  const genreMap = useAppSelector((state) => state.genres.map);
 
   const poster = movie.poster_path
     ? `${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE}${movie.poster_path}`
@@ -75,7 +78,7 @@ export default function MovieCard({ movie }) {
                 key={g}
                 className="bg-background text-text-secondary px-2 py-1 text-xs rounded-lg font-medium border border-surface"
               >
-                {g}
+                {(genreMap && genreMap[g]) || "Unknown"}{" "}
               </span>
             ))}
           </div>

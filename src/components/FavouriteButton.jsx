@@ -8,7 +8,6 @@ import {
 } from "@/utils/guestFavourites";
 
 export default function FavouriteButton({ movie }) {
-  // console.log("fasnkjglkdg ", movie)
   const { user } = useAppSelector((state) => state.auth);
 
   const [isFav, setIsFav] = useState(false);

@@ -66,8 +66,6 @@ export default function ProfilePage() {
 
   const isAdmin = user?.role === "admin";
 
-  // console.log(isAdmin)
-
   return (
     <ProtectedRoute>
       <div className="mx-auto container bg-background">

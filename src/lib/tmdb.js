@@ -4,7 +4,6 @@ export async function tmdbFetch(path, params = {}) {
   const baseUrl = `${cleanBase}/${cleanPath}`;
 
   const url = new URL(baseUrl);
-  // console.log("API KEY ", process.env.TMDB_API_KEY);
   url.searchParams.set("api_key", process.env.TMDB_API_KEY);
 
   Object.entries(params).forEach(([key, value]) => {
@@ -12,8 +11,6 @@ export async function tmdbFetch(path, params = {}) {
       url.searchParams.set(key, String(value));
     }
   });
-  // console.log("URL ", url.toString());
-  // console.log("🔍 TMDB URL:", url.toString());
 
   try {
     const res = await fetch(url.toString(), {
@@ -35,7 +32,6 @@ export async function tmdbFetch(path, params = {}) {
     }
 
     const data = await res.json();
-    // console.log("✅ TMDB fetch success:", path);
     return data;
   } catch (error) {
     console.error("❌ TMDB fetch failed:", {

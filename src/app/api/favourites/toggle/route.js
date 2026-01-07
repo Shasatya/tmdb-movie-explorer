@@ -19,8 +19,6 @@ export async function POST(req) {
     return Response.json({ removed: true });
   }
 
-//   console.log("movie ", movie);
-
   await Favourite.create({
     user: user.id,
     movieId: movie.id,
