@@ -21,6 +21,20 @@ export default function AuthModal({ onClose }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const syncGuestFavourites = async () => {
+    const guestFavs = JSON.parse(localStorage.getItem("favourites") || "[]");
+
+    if (!guestFavs.length) return;
+
+    await fetch("/api/favourites/sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ movies: guestFavs }),
+    });
+
+    localStorage.removeItem("favourites");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -47,6 +61,7 @@ export default function AuthModal({ onClose }) {
         throw new Error(data.message || "Something went wrong");
       }
 
+      await syncGuestFavourites();
       dispatch(fetchMe());
 
       onClose();

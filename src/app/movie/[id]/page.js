@@ -6,6 +6,7 @@ import HorizontalSlider from "@/components/HorizontalSlider";
 import MovieTrailer from "@/components/MovieTrailer";
 import CastCard from "@/components/CastCard";
 import Error from "@/components/Error";
+import FavouriteButton from "@/components/FavouriteButton";
 
 export default async function MoviePage({ params }) {
   const { id } = await params;
@@ -126,8 +127,7 @@ export default async function MoviePage({ params }) {
                 ) : null}
 
                 <div>
-                  Add to Favorites
-                  {/* <FavouriteButton movie={movie} /> */}
+                  <FavouriteButton movie={movie} />
                 </div>
               </div>
             </div>
